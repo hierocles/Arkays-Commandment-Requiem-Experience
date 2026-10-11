@@ -14,7 +14,7 @@ using Newtonsoft.Json.Linq;
 namespace RequiemExperience
 {
     [SupportedOSPlatform("windows7.0")]
-    [SupportedOSPlatform("windows10")]
+    [SupportedOSPlatform("windows10.0")]
     class RacePatcher
     {
         public static bool RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state, Settings Settings)

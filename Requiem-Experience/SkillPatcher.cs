@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace RequiemExperience
 {
     [SupportedOSPlatform("windows7.0")]
-    [SupportedOSPlatform("windows10")]
+    [SupportedOSPlatform("windows10.0")]
     class SkillPatcher
     {
         private static readonly HashSet<string> skills = new();

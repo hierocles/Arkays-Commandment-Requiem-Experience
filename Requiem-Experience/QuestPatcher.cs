@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace RequiemExperience
 {
     [SupportedOSPlatform("windows7.0")]
-    [SupportedOSPlatform("windows10")]
+    [SupportedOSPlatform("windows10.0")]
     class QuestPatcher
     {
         public static bool RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state, Settings Settings)
@@ -180,9 +180,8 @@ namespace RequiemExperience
                             ConditionFloat cond = new();
                             cond.CompareOperator = CompareOperator.NotEqualTo;
                             cond.ComparisonValue = 1.0f;
-                            FunctionConditionData func = new();
-                            func.Function = Condition.Function.GetInCurrentLocFormList;
-                            func.ParameterOneRecord.SetTo(radiantExcl);
+                            GetInCurrentLocFormListConditionData func = new();
+                            func.FormList.Link.SetTo(radiantExcl);
                             cond.Data = func;
                             alias.Conditions.Insert(1, cond);
                         }

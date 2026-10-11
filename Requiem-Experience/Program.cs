@@ -14,7 +14,7 @@ using System.Runtime.Versioning;
 namespace RequiemExperience
 {
     [SupportedOSPlatform("windows7.0")]
-    [SupportedOSPlatform("windows10")]
+    [SupportedOSPlatform("windows10.0")]
     public class Program
     {
         static Lazy<Settings> _LazySettings = null!;
@@ -49,6 +49,7 @@ namespace RequiemExperience
 
             string rewardINI = state.ExtraSettingsDataPath + @"\Reward_Experience.ini";
             string unlvldINI = state.ExtraSettingsDataPath + @"\True_Experience.ini";
+            string lorerimINI = state.ExtraSettingsDataPath + @"\Lorerim_Experience.ini";
             var outputPath = $@"{state.DataFolderPath}\SKSE\Plugins\Experience.ini";
             switch (Settings.General.Preset)
             {
@@ -59,6 +60,10 @@ namespace RequiemExperience
                 case General.ExperiencePreset.ExtraRewarding:
                     Console.WriteLine($@"Writing {rewardINI} preset to {outputPath}");
                     File.WriteAllLines(outputPath, File.ReadAllLines(rewardINI).Select(x => Regex.Replace(x, @"\s*;.*$", "")));
+                    break;
+                case General.ExperiencePreset.Lorerim:
+                    Console.WriteLine($@"Writing {lorerimINI} preset to {outputPath}");
+                    File.WriteAllLines(outputPath, File.ReadAllLines(lorerimINI).Select(x => Regex.Replace(x, @"\s*;.*$", "")));
                     break;
             }
         }

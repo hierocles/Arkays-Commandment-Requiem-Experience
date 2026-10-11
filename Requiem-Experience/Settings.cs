@@ -31,7 +31,7 @@ namespace RequiemExperience
         public int LevelUpXPMult = 50;
 
         [SynthesisSettingName("Preset for Experience")]
-        [SynthesisTooltip("Apply (overwrite if exists) Experience.ini with preset\r\nNone - do not overwrite\r\nTrue Unlevelled - Killing XP values do not change\r\nExtra Rewarding - Killing XP values the bigger the higher enemies you hunt")]
+        [SynthesisTooltip("Apply (overwrite if exists) Experience.ini with preset\r\nNone - do not overwrite\r\nTrue Unlevelled - Killing XP values do not change\r\nExtra Rewarding - Killing XP values the bigger the higher enemies you hunt\r\nLorerim - Use the bundled Lorerim Experience settings")]
         public ExperiencePreset Preset = ExperiencePreset.TrueUnlevelled;
 
         [SynthesisSettingName("Enable debug")]
@@ -40,7 +40,7 @@ namespace RequiemExperience
 
         public enum ExperiencePreset
         {
-            None, TrueUnlevelled, ExtraRewarding
+            None, TrueUnlevelled, ExtraRewarding, Lorerim
         }
     }
 

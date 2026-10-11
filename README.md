@@ -3,7 +3,15 @@
 This is an auto-patcher which is meant to create patch for Experience mod, to be used along with Requiem - or any other overhaul which makes Skyrim world to be un-levelled.
 
 # How to run patcher?
-Please follow steps in [Synthesis wiki](https://github.com/Mutagen-Modding/Synthesis/wiki/Installation)
+Install the .NET 9 SDK or newer and follow the steps in the [Synthesis installation guide](https://mutagen-modding.github.io/Synthesis/Installation/).
+
+The patcher targets `net9.0-windows` and uses Mutagen.Bethesda.Skyrim 0.54.4 and Mutagen.Bethesda.Synthesis 0.36.6 (stable releases).
+
+To build locally from the repository root:
+
+```powershell
+dotnet build Requiem-Experience.sln -c Release
+```
 
 # Patcher logic and settings
 
@@ -24,9 +32,11 @@ It takes care of few things:
   * Removes Skills from Skill Books thus makes them to be a normal books. Also increases gold value of no-longer-Skill Books (default is 200%/2x)
 
 
-I have also included 2 proposed Experience ini presets, which share most of the settings apart from killing XP:
+I have also included 3 Experience ini presets:
 * True_Experience.ini - true unleveled XP, which means XP multiplier is 1.0 and level range is 65535. Killing XP doesn't care of your level / level of the enemy.
 * Reward_Experience.ini - challenge rewarded... XP multiplier is 0.5 and level range is 10. You get full XP only when kill enemy 10 levels above you, and about 1 XP when kill enemy 10 levels below you. On other hand if enemy is 10+ levels above - you get extra credit.
+
+* Lorerim_Experience.ini - the supplied Lorerim preset, including its quest, exploration, clearing, and killing XP settings. Select `Lorerim` under General → Preset for Experience to write these settings to `SKSE\Plugins\Experience.ini`.
 
 Pick one via Synthesis Settings, or grab it manually ¯\\\_(ツ)\_/¯
 Feel free to edit proposed values if you like so~
